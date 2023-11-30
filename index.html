@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,700&amp;subset=cyrillic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=cyrillic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i|Tinos:400,400i&amp;subset=cyrillic"
+	  rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js "></script>
+	<script src="./scripts/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="./styles/style.css"/>
 </head>
 <body>
-	
+	<audio id="audio" src="./music/sound.mp3" type="audio/mp3" autoplay="autoplay" loop="loop"></audio>
+
+	<script>
+		var audio = document.getElementById("audio");
+		audio.volume = 0.25;
+	</script>
+
+	<div class="field-box">
+	  <div class="field">
+	  </div>
+	</div>
+	<div class="cl"></div>
+
+	<script>
+		var game = new Game(settings);
+		game.init();
+	</script>
 </body>
 </html>
