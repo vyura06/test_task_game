@@ -1,4 +1,5 @@
 The game "Bagel"
+
 Task:
 ● Generate a 40x24 map
 ● Fill the entire map with a wall
