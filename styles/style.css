@@ -1,0 +1,155 @@
+@keyframes attack {
+    from {
+      translate: 0;
+    }
+
+    5% {
+      transform: translateY(-10px);
+    }
+
+    from {
+      translate: 0;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body,
+  html {
+    height: 100%;
+  }
+
+  body {
+    background-color: #161A30;
+    color: #ffffff;
+  }
+
+  h1 {
+    font-family: "Playfair Display";
+    font-size: 30px;
+    padding: 10px 0px;
+    margin: 0px;
+  }
+
+  .field-box {
+    border: 2px solid #d0d0d0;
+    float: left;
+    text-align: center;
+    margin-top: 2rem;
+    margin-left: 15rem;
+  }
+
+  .field {
+    position: relative;
+    width: 1024px;
+    height: 640px;
+    overflow: hidden;
+  }
+
+  .field__hover {
+    content: 'Новая игра';
+    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    position: absolute;
+  }
+
+  .field .tile {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-size: 100%;
+    background-image: url(../images/tile-.png);
+    z-index: 5;
+    transition: all .1s linear;
+  }
+
+  .field .tileW {
+    background-image: url(../images/tile-W.png);
+  }
+
+  .field .tileE {
+    background-image: url(../images/tile-E.png);
+    z-index: 10;
+  }
+
+  .field .tileP {
+    background-image: url(../images/tile-P.png);
+    z-index: 10;
+    transition: transform .3s linear;
+  }
+
+  .field .tileHP {
+    background-image: url(../images/tile-HP.png);
+    z-index: 9;
+  }
+
+  .field .tileSW {
+    background-image: url(../images/tile-SW.png);
+    z-index: 9;
+  }
+
+  .field .tile .health {
+    background-color: #ff0000;
+    z-index: 11;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 3px;
+  }
+
+  .field .tileP .health {
+    background-color: #00ff00;
+    z-index: 11;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 3px;
+  }
+
+  .inventory-box {
+    border: 2px solid #d0d0d0;
+    float: left;
+  }
+
+  .inventory {
+    position: relative;
+    width: 800px;
+    height: 32px;
+  }
+
+  .cl {
+    clear: both;
+    display: block;
+  }
+
+  .boost {
+    filter: drop-shadow(0 0 5px blue);
+    transform: scale(1.1);
+  }
+
+  .attack {
+    animation: attack .2s;
+    filter: drop-shadow(0 0 1.5px #000);
+  }
+
+  .follow {
+    filter: drop-shadow(0 0 2px #ffa500);
+  }
+
+  .heal {
+    filter: drop-shadow(0 0 1px #00ff00);
+  }
+
+  .damage {
+    filter: drop-shadow(0 0 1.5px #ff3d3d);
+  }
