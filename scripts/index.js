@@ -42,8 +42,6 @@ const settings = {
 
 }
 
-  // Функции
-  
   function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
@@ -54,7 +52,6 @@ const settings = {
     }
   }
   
-  // Компоненты
   class Element {
     constructor([x, y]) {
       this.x = x;
@@ -171,14 +168,10 @@ const settings = {
     }
   
     generate() {
-      const corridors = new Corridors(); //коридоры
-      const rooms = new Array(this._settings.quantityOfRooms); // массив комнат
-  
-      //заполнение всей карты стеной
+      const corridors = new Corridors();
+      const rooms = new Array(this._settings.quantityOfRooms); 
   
       this._fillWithWall();
-  
-      // создание коридоров
   
       createElements(this._settings.quantityOfVerticalCorridors, () => {
         corridors.addToRandomLocation(new VerticalCorridor(this._settings.corridorWidth, this._maxY), this._maxX);
@@ -188,16 +181,13 @@ const settings = {
         corridors.addToRandomLocation(new HorizontalCorridor(this._settings.corridorWidth, this._maxX), this._maxY);
       })
   
-      // создание комнат
-  
       createElements(this._settings.quantityOfRooms, (i) => {
         const roomWidth = getRandomInt(this._settings.minRoomSize, this._settings.maxRoomSize),
           roomHeight = getRandomInt(this._settings.minRoomSize, this._settings.maxRoomSize);
         rooms[i] = new Room(roomWidth, roomHeight);
         rooms[i].setPassableLocation(corridors, this._maxX, this._maxY);
       })
-  
-      // добавление коридоров и комнат на карту
+
       this._deleteWall([...corridors, ...rooms]);
     }
   
@@ -479,9 +469,9 @@ const settings = {
   class Game {
     constructor(settings) {
       this._mapSettings = settings.map;
-      this._mapSettings.quantityOfVerticalCorridors = getRandomInt(settings.map.minCorridors, settings.map.maxCorridors); // количество вертикальных проходов
-      this._mapSettings.quantityOfHorizontalCorridors = getRandomInt(settings.map.minCorridors, settings.map.maxCorridors); // количество горизонтальных проходов
-      this._mapSettings.quantityOfRooms = getRandomInt(settings.map.minRooms, settings.map.maxRooms); // количество комнат
+      this._mapSettings.quantityOfVerticalCorridors = getRandomInt(settings.map.minCorridors, settings.map.maxCorridors); 
+      this._mapSettings.quantityOfHorizontalCorridors = getRandomInt(settings.map.minCorridors, settings.map.maxCorridors);
+      this._mapSettings.quantityOfRooms = getRandomInt(settings.map.minRooms, settings.map.maxRooms); 
       this._gameElementsSettings = settings.gameElements;
       this._enemiesSettings = settings.enemies;
       this._protagonistSettings = settings.protagonist;
@@ -586,8 +576,8 @@ const settings = {
       $('.field').append(`<div id="hover" class="field__hover"><b>${message}<b><br/><br/>Новая игра</div></div>`);
       this.gameMap = new GameMap(this._mapSettings);
       this._protagonist = new Protagonist(this, this._protagonistSettings);
-      this._enemies = new ItemCollection(); // массив врагов
-      this._gameElements = new ItemCollection(); // массив мечей, зелий
+      this._enemies = new ItemCollection(); 
+      this._gameElements = new ItemCollection(); 
       this.gameMap.generate()
       this._generateGameElements();
       this._generatePersonages();
