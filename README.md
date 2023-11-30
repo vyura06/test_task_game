@@ -42,4 +42,4 @@ health potion (and removing the potion)*
 
 *There should be no unreachable zones*
 
-**Technologies:** HTML, CSS, JavaScript, JQuery.
+## Technologies: HTML, CSS, JavaScript, JQuery.
